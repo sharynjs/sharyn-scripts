@@ -8,9 +8,9 @@ require('dotenv/config')
 const startServer = `http-server -p ${PORT}`
 ```
 
-It makes chaining, and launching scripts in parallel much easier than using [`npm-run-all`](https://www.npmjs.com/package/npm-run-all) (which has been a precious help for many years). It also makes your scripts compatible with both Yarn and NPM.
+It makes chaining and launching scripts in parallel much easier than using [`npm-run-all`](https://www.npmjs.com/package/npm-run-all) (which has been a precious help to me for many years). It also makes your scripts compatible with both Yarn and NPM.
 
-This package is just a little helper for those who like to use JavaScript to declare their scripts instead of using `scripts` in `package.json`. It is not needed at all to use this technique, but it reduces the boilerplate a bit.
+This package is just a little helper, mainly to reduce the boilerplate of using `spawn`, and to improve readability.
 
 ## Usage
 
@@ -36,7 +36,7 @@ Use `scripts` in `package.json` as simple hooks to your `script.js` file:
 
 ### scripts.js
 
-Create a `scripts.js` (or any name you want). In this example we put in the root of our project, next to `package.json`.
+Create a `scripts.js` (or any name you want). In this example we put in the root of our project, next to `package.json`:
 
 ```js
 const { run, runAsync, scripts } = require('@sharyn/run-cmd')
