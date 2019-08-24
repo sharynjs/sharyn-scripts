@@ -1,16 +1,37 @@
 # 🌹 @sharyn/run-cmd
 
+This package is just a little helper for those who like to use JavaScript to declare their scripts instead of using `scripts` in `package.json`. It is not needed at all to use this technique, but reduces the boilerplate a bit.
+
+## Why?
+
+Declaring your scripts in a JavaScript file gives you much more features than using plain text in `package.json`. For instance, you can use `dotenv` to load up your `.env` and run a command like:
+
+```js
+require('dotenv/config')
+
+const startServer = `http-server -p ${PORT}`
+```
+
+It also makes chaining, and launching scripts in parallel much easier than using [`npm-run-all`](https://www.npmjs.com/package/npm-run-all) (which has been a precious help for many years).
+
+And you just have all of JavaScript available for whatever it is that you want to do in your scripts instead of plain text.
+
+
 ## Usage
 
 ### Installation
 
 ```sh
 npm install --save-dev @sharyn/run-cmd
+
 or
+
 yarn add --dev @sharyn/run-cmd
 ```
 
 ### package.json
+
+Use `scripts` in `package.json` as simple hooks to your `script.js` file:
 
 ```json
 "scripts" : {
@@ -20,9 +41,9 @@ yarn add --dev @sharyn/run-cmd
 }
 ```
 
-Create a `scripts.js` (or any name you want). In this example we put in the root of our project, next to `package.json`.
-
 ### scripts.js
+
+Create a `scripts.js` (or any name you want). In this example we put in the root of our project, next to `package.json`.
 
 ```js
 const { run, runAsync, scripts } = require('@sharyn/run-cmd')
@@ -62,25 +83,11 @@ scripts({
 
 ```
 
-## Why?
-
-Declaring your scripts in a JavaScript file gives you much more features than using plain text in `package.json`. For instance, you can use `dotenv` to load up your `.env` and run a command like:
-
-```js
-require('dotenv/config')
-
-const startServer = `http-server -p ${PORT}`
-```
-
-It also makes chaining, and launching scripts much easier than using [`npm-run-all`](https://www.npmjs.com/package/npm-run-all) (which has been a precious help for many years).
-
-And you just have all of JavaScript available for whatever it is that you want to do in your scripts instead of plain text.
-
 ## API
 
-**`run`** is just a `spawnSync(cmd, { shell: true, stdio: 'inherit' })`, so it is **synchronous**.
+**`run`** is just a `spawnSync(cmd, { shell: true, stdio: 'inherit' })`, so it is **synchronous**. It interrupts the process if one of the commands fails.
 
-**`runSync`** uses [`child-process-promise`](https://www.npmjs.com/package/child-process-promise), to make `spawn` a `Promise`. So you can do `await runAsync()` to make it synchronous if you want to use `async`/`await`.
+**`runAsync`** uses [`child-process-promise`](https://www.npmjs.com/package/child-process-promise), to make `spawn` a `Promise`. So you can do `await runAsync()` to make it synchronous if you want to use `async`/`await`.
 
 **`scripts`** just calls the key of the object you passed to it with `process.argv[2]`. You can replace it entirely by:
 
@@ -95,7 +102,7 @@ const scripts = {
 scripts[process.argv[2]]()
 ```
 
-That's it.
+It just looks a little nicer.
 
 ## Babel / TypeScript
 
