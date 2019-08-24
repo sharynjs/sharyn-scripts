@@ -60,7 +60,7 @@ const checkAll = () => {
   run(test)
 }
 
-// And finally declaire your scripts in an object
+// And finally declare your scripts in an object
 
 scripts({
   dev: () => {
