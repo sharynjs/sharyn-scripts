@@ -1,6 +1,6 @@
 # 🌹 @sharyn/run-cmd
 
-This package is just a little helper for those who like to use JavaScript to declare their scripts instead of using `scripts` in `package.json`. It is not needed at all to use this technique, but reduces the boilerplate a bit.
+This package is just a little helper for those who like to use JavaScript to declare their scripts instead of using `scripts` in `package.json`. It is not needed at all to use this technique, but it reduces the boilerplate a bit.
 
 ## Why?
 
