@@ -10,7 +10,7 @@ const startServer = `http-server -p ${PORT}`
 
 It makes chaining and launching scripts in parallel much easier than using [`npm-run-all`](https://www.npmjs.com/package/npm-run-all) (which has been a precious help to me for many years). It also makes your scripts compatible with both Yarn and NPM.
 
-This package is just a little helper, mainly to reduce the boilerplate of using `spawn`, and to improve readability.
+This package is **not needed at all** to achieve this technique, but it helps reducing the boilerplate of using `spawn`, and improves the readability of the file.
 
 ## Usage
 
