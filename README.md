@@ -36,7 +36,7 @@ Use `scripts` in `package.json` as simple hooks to your `script.js` file:
 
 ### scripts.js
 
-Create a `scripts.js` (or any name you want). In this example we put in the root of our project, next to `package.json`:
+Create a `scripts.js` (or any name you want). In this example we put it in the root of our project.
 
 ```js
 const { run, runAsync, scripts } = require('@sharyn/run-cmd')
