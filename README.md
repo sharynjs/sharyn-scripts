@@ -1,4 +1,4 @@
-# 🌹 `scripts.js` with @sharyn/run-cmd
+# 🌹 scripts.js with @sharyn/run-cmd
 
 **Declaring your scripts in a JavaScript file** gives you much more features than using plain text in `package.json`. For instance, you can use [`dotenv`](https://github.com/motdotla/dotenv) to load up your `.env` and run a command like:
 
@@ -70,7 +70,7 @@ scripts({
   deploy: () => {
     checkAll()                   // Runs clean, lint, test,
     run(upload)                  // and upload in series
-  }
+  },
   'check-all': checkAll,         // Runs clean, lint, test, in series
 })
 
