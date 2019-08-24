@@ -41,7 +41,7 @@ Create a `scripts.js` (or any name you want). In this example we put in the root
 ```js
 const { run, runAsync, scripts } = require('@sharyn/run-cmd')
 
-// First declare some raw commands as simple strings
+// First declare some raw commands as strings
 
 const clean = 'rimraf lib dist'
 const lint = 'eslint src'
@@ -52,7 +52,7 @@ const devServer = 'nodemon'
 
 const upload = 'git push prod master'
 
-// Optionally combine them into sequences as simple functions
+// Optionally combine them into sequences with functions
 
 const checkAll = () => {
   run(clean)
@@ -60,7 +60,7 @@ const checkAll = () => {
   run(test)
 }
 
-// And finally declaire your scripts in a simple object
+// And finally declaire your scripts in an object
 
 scripts({
   dev: () => {
@@ -73,6 +73,8 @@ scripts({
   }
   'check-all': checkAll,         // Runs clean, lint, test, in series
 })
+
+// That's all.
 
 ```
 
