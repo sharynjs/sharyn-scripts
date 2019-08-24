@@ -105,4 +105,4 @@ If you want to use anything fancy like Babel or TypeScript, just use [`babel-nod
 
 ## Credits
 
-Hey, I am [@verekia](https://github.com/verekia) and this package is part of a library I am developing, @sharynjs/sharyn. The rest of the library is not ready to be used by the community.
+Hey, I am [@verekia](https://github.com/verekia) and this package is part of a library I am developing, [@sharynjs/sharyn](https://github.com/sharynjs/sharyn). The rest of the library is not ready to be used by the community.
