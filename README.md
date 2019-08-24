@@ -102,3 +102,7 @@ It just looks a little nicer.
 ## Babel / TypeScript
 
 If you want to use anything fancy like Babel or TypeScript, just use [`babel-node`](https://babeljs.io/docs/en/babel-node) or [`ts-node`](https://github.com/TypeStrong/ts-node) in the scripts of your `package.json`.
+
+## Credits
+
+Hey, I am [@verekia](https://github.com/verekia) and this package is part of a library I am developing, @sharynjs/sharyn. The rest of the library is not ready to be used by the community.
