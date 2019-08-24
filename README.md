@@ -8,6 +8,14 @@ require('dotenv/config')
 const startServer = `http-server -p ${PORT}`
 ```
 
+You can also create commands with function parameters:
+
+```js
+const deployServerless = stage => `serverless deploy -s ${stage}`
+
+deployServerless('production') // or 'staging'
+```
+
 It makes chaining and launching scripts in parallel much easier than using [`npm-run-all`](https://www.npmjs.com/package/npm-run-all) (which has been a precious help to me for many years), gives you all the power of JavaScript, and also makes your scripts compatible with both Yarn and NPM (since you are not writing `npm run foo` or `yarn foo` in your scripts).
 
 This package is **not needed at all** to achieve this technique, but it helps reducing the boilerplate of using `spawn`, and improves the readability of the file.
