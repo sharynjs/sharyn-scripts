@@ -5,7 +5,7 @@
 ```js
 require('dotenv/config')
 
-const startServer = `http-server -p ${PORT}`
+const startServer = `http-server -p ${process.env.PORT}`
 ```
 
 You can also create commands with function parameters:
