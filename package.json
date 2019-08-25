@@ -1,8 +1,8 @@
 {
   "name": "@sharyn/run-cmd",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
-  "repository": "git@github.com:sharynjs/run-cmd.git",
+  "repository": "https://github.com/sharynjs/sharyn-run-cmd",
   "license": "MIT",
   "dependencies": {
     "child-process-promise": "2.2.1"
