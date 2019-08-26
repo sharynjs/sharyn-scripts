@@ -115,7 +115,7 @@ If you want to use anything fancy like Babel or TypeScript, just use [`babel-nod
 
 ## Differences with Gulp
 
-While both this approach and Gulp use JavaScript to declare tasks, this approach is much simpler. No Gulp plugins, no pipe flows, no callbacks, no streams. Here we simply use the CLI provided by these packages, so it is much more straightforward and similar to using `scripts` of `package.json`.
+While both this approach and Gulp use JavaScript to declare tasks, this is much simpler. No Gulp plugins, no pipe flows, no callbacks, no streams. Here we simply use the CLI provided by these packages, so it is much more straightforward and similar to using `scripts` of `package.json`.
 
 ## Credits
 
