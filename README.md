@@ -113,6 +113,10 @@ It just looks a little nicer.
 
 If you want to use anything fancy like Babel or TypeScript, just use [`babel-node`](https://babeljs.io/docs/en/babel-node) or [`ts-node`](https://github.com/TypeStrong/ts-node) in the scripts of your `package.json`.
 
+## Differences with Gulp
+
+While both this approach and Gulp use JavaScript to declare tasks, this approach is much simpler. No Gulp plugins, no pipe flows, no callbacks, no streams. Here we simply use the CLI provided by these packages, so it is much more straightforward and similar to using `scripts` of `package.json`.
+
 ## Credits
 
 Hey, I am [@verekia](https://github.com/verekia) and this package is part of a library I am developing, [@sharynjs/sharyn](https://github.com/sharynjs/sharyn). The rest of the library is not ready to be used by the community.
