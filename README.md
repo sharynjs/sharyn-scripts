@@ -1,4 +1,4 @@
-# 🌹 scripts.js with @sharyn/run-cmd
+# 🌹 scripts.js with @sharyn/scripts
 
 **Declaring your scripts in a JavaScript file** gives you much more features than using plain text in `package.json`. For instance, you can use [`dotenv`](https://github.com/motdotla/dotenv) to load up your `.env` and use variables in a command like:
 
@@ -27,9 +27,9 @@ This package is **not needed at all** to achieve this technique, but it helps re
 ### Installation
 
 ```sh
-npm install --save-dev @sharyn/run-cmd
+npm install --save-dev @sharyn/scripts
 # or
-yarn add --dev @sharyn/run-cmd
+yarn add --dev @sharyn/scripts
 ```
 
 ### package.json
@@ -49,7 +49,7 @@ Use `scripts` in `package.json` as simple hooks to your `script.js` file:
 Create a `scripts.js` (or any name you want). In this example we put it in the root of our project.
 
 ```js
-const { run, runAsync, scripts } = require('@sharyn/run-cmd')
+const { run, runAsync, scripts } = require('@sharyn/scripts')
 
 // First declare some raw commands as strings
 
