@@ -90,7 +90,7 @@ scripts({
 
 ## API
 
-**`runSync`** is just a `spawnSync(cmd, { shell: true, stdio: 'inherit' })`, so it is **synchronous**. It interrupts the process if one of the commands fails.
+**`runSync`** is just a `spawnSync(cmd, { shell: true, stdio: 'inherit' })`. It interrupts the process if one of the commands fails.
 
 **`runAsync`** uses [`child-process-promise`](https://www.npmjs.com/package/child-process-promise), to make `spawn` a `Promise`. So you can do `await runAsync()` to make it synchronous if you want to use `async`/`await`.
 
