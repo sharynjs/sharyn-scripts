@@ -49,7 +49,7 @@ Use `scripts` in `package.json` as simple hooks to your `script.js` file:
 Create a `scripts.js` (or any name you want). In this example we put it in the root of our project.
 
 ```js
-const { run, runAsync, scripts } = require('@sharyn/scripts')
+const { runSync, runAsync, scripts } = require('@sharyn/scripts')
 
 // First declare some raw commands as strings
 
@@ -65,9 +65,9 @@ const upload = 'git push prod master'
 // Optionally combine them into sequences with functions
 
 const checkAll = () => {
-  run(clean)
-  run(lint)
-  run(test)
+  runSync(clean)
+  runSync(lint)
+  runSync(test)
 }
 
 // And finally declare your scripts in an object
@@ -79,7 +79,7 @@ scripts({
   },
   deploy: () => {
     checkAll()                   // Runs clean, lint, test,
-    run(upload)                  // and upload in series
+    runSync(upload)                  // and upload in series
   },
   'check-all': checkAll,         // Runs clean, lint, test, in series
 })
@@ -90,7 +90,7 @@ scripts({
 
 ## API
 
-**`run`** is just a `spawnSync(cmd, { shell: true, stdio: 'inherit' })`, so it is **synchronous**. It interrupts the process if one of the commands fails.
+**`runSync`** is just a `spawnSync(cmd, { shell: true, stdio: 'inherit' })`, so it is **synchronous**. It interrupts the process if one of the commands fails.
 
 **`runAsync`** uses [`child-process-promise`](https://www.npmjs.com/package/child-process-promise), to make `spawn` a `Promise`. So you can do `await runAsync()` to make it synchronous if you want to use `async`/`await`.
 
@@ -99,8 +99,8 @@ scripts({
 ```js
 const scripts = {
   foo: () => {
-    run(bar)
-    run(baz)
+    runSync(bar)
+    runSync(baz)
   },
 }
 
