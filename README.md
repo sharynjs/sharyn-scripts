@@ -117,6 +117,9 @@ If you want to use anything fancy like Babel or TypeScript, just use [`babel-nod
 
 While both this approach and Gulp use JavaScript to declare tasks, this is much simpler. No Gulp plugins, no pipe flows, no callbacks, no streams. Here we simply use the CLI provided by these packages, so it is much more straightforward and similar to using `scripts` of `package.json`.
 
-## Credits
+<hr />
 
-Hey, I am [@verekia](https://github.com/verekia) and this package is part of a library I am developing, [@sharynjs/sharyn](https://github.com/sharynjs/sharyn). The rest of the library is not ready to be used by the community.
+<p align="center">
+  This package is part of <a href="https://github.com/sharynjs/sharyn"><b>@sharynjs/sharyn</b></a>.
+</p>
+
