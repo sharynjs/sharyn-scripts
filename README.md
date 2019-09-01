@@ -113,6 +113,19 @@ It just looks a little nicer.
 
 If you want to use anything fancy like Babel or TypeScript, just use [`babel-node`](https://babeljs.io/docs/en/babel-node) or [`ts-node`](https://github.com/TypeStrong/ts-node) in the scripts of your `package.json`.
 
+## process.env
+
+With this approach, you can also assign anything you want to `process.env` without needing a package like [cross-env](https://www.npmjs.com/package/cross-env) for platform compatibility. Just do this:
+
+```js
+scripts({
+  webpack: () => {
+    process.env.NODE_ENV = 'production'
+    runSync(webpackProd)
+  },
+})
+```
+
 ## Differences with Gulp
 
 While both this approach and Gulp use JavaScript to declare tasks, this is much simpler. No Gulp plugins, no pipe flows, no callbacks, no streams. Here we simply use the CLI provided by these packages, so it is much more straightforward and similar to using `scripts` of `package.json`.
