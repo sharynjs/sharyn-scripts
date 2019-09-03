@@ -1,10 +1,17 @@
 {
   "name": "@sharyn/scripts",
-  "version": "1.2.0-alpha.1",
+  "version": "1.2.0-alpha.3",
   "main": "index.js",
   "repository": "https://github.com/sharynjs/sharyn-scripts",
   "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
   "dependencies": {
-    "child-process-promise": "2.2.1"
+    "child-process-promise": "2.2.1",
+    "lodash.isplainobject": "4.0.6"
+  },
+  "devDependencies": {
+    "jest": "24.9.0"
   }
 }

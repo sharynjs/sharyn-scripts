@@ -1,5 +1,8 @@
-declare function runSync(cmd: string): void
-declare function runAsync(cmd: string): Promise<any>
+declare function runSync(commandOrOptions: string | Object, options?: Object): void
+declare function runAsync(commandOrOptions: string | Object, options?: Object): Promise<any>
 declare function scripts(scriptsObj: Object): void
+declare function series(...commands: (string | Object)[]): void
+declare function parallel(...commands: (string | Object)[]): Promise<any[]>
+declare type commands = any
 
-export { runSync, runAsync, scripts }
+export { runSync, runAsync, scripts, series, parallel, commands }
