@@ -3,6 +3,6 @@ declare function runAsync(commandOrOptions: string | Object, options?: Object): 
 declare function scripts(scriptsObj: Object): void
 declare function series(...commands: (string | Object)[]): void
 declare function parallel(...commands: (string | Object)[]): Promise<any[]>
-declare type commands = any
+declare const commands: any
 
 export { runSync, runAsync, scripts, series, parallel, commands }
