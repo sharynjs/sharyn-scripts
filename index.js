@@ -60,4 +60,4 @@ const commands = {
   SHX_RM_DIST_DOTWEBPACK: 'shx rm -rf dist .webpack',
 }
 
-module.exports = { runSync, runAsync, scripts, commands }
+module.exports = { runSync, runAsync, scripts, commands, series, parallel }
