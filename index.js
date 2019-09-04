@@ -82,30 +82,10 @@ const parallel = (...args) => {
 
 const scripts = scriptsObj => scriptsObj[process.argv[2]]()
 
-const commands = {
-  WEBPACK_PROD: 'webpack -p',
-  DOCKER_COMPOSE_UP: 'docker-compose up -d',
-  waitLocalPgReady: network => {
-    if (!network) {
-      throw Error('waitLocalPgReady requires a Docker network argument')
-    }
-    return `until docker run --rm --link db:pg --net ${network} postgres:latest pg_isready -U postgres -h pg; do sleep 1; done`
-  },
-  webpackDevServer: port => `webpack-dev-server ${port ? `--port ${port}` : ''}`,
-  serverlessDeploy: stage => `serverless deploy ${stage ? `-s ${stage}` : ''}`,
-  serverlessOffline: ({ stage, port } = {}) =>
-    `serverless offline ${stage ? `-s ${stage}` : ''} ${port ? `-P ${port}` : ''}`,
-  httpServer: ({ folder, port } = {}) =>
-    `http-server ${folder || ''} ${port ? `-p ${port}` : ''} --cors -g`,
-  SHX_COPY_PUBLIC_TO_DIST: 'shx cp -r public dist',
-  SHX_RM_DIST_DOTWEBPACK: 'shx rm -rf dist .webpack',
-}
-
 module.exports = {
   runSync,
   runAsync,
   scripts,
-  commands,
   series,
   parallel,
 }
