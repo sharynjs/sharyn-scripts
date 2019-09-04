@@ -75,7 +75,14 @@ const series = (...args) => flattenDeep(args).forEach(command => runSync(command
 
 const parallel = (...args) => Promise.all(flattenDeep(args).map(command => runAsync(command)))
 
-const scripts = scriptsObj => scriptsObj[process.argv[2]]()
+const scripts = (scriptsObj = {}) => {
+  const scriptCalledName = process.argv[2]
+  if (scriptsObj[scriptCalledName]) {
+    scriptsObj[scriptCalledName]()
+  } else {
+    throw Error(`"${scriptCalledName}" does not exist in scripts()`)
+  }
+}
 
 module.exports = {
   runSync,

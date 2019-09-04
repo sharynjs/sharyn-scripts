@@ -1,7 +1,7 @@
 const { spawnSync } = require('child_process')
 const asyncSpawn = require('child-process-promise').spawn
 
-const { runSync, runAsync, series, parallel } = require('.')
+const { runSync, runAsync, series, parallel, scripts } = require('.')
 
 jest.mock('child_process')
 jest.mock('child-process-promise')
@@ -193,4 +193,11 @@ test('parallel', async () => {
   expect(asyncSpawn).toHaveBeenCalledWith('x', defaultSpawnOptions)
   expect(asyncSpawn).toHaveBeenCalledWith('y', defaultSpawnOptions)
   expect(asyncSpawn).toHaveBeenCalledWith('z', defaultSpawnOptions)
+})
+
+test('scripts', () => {
+  process.argv = [null, null, 'foo']
+  expect(() => scripts({ bar: () => {} })).toThrow('"foo" does not exist in scripts()')
+  process.argv = [null, null, 'bar']
+  expect(() => scripts({ bar: () => {} })).not.toThrow()
 })
