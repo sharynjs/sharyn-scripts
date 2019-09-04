@@ -2,8 +2,6 @@
 
 **Declaring your scripts in a JavaScript file** gives you much more features than using plain text in `package.json`. For more details and for the documentation, please read my [**article about scripts.js**](https://verekia.com/javascript/scripts.js/).
 
-## Usage
-
 ### Installation
 
 ```sh
