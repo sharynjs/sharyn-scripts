@@ -154,6 +154,16 @@ test('series', () => {
 
   spawnSync.mockClear()
 
+  series([['a'], 'b', [['c']]], 'd')
+  expect(spawnSync.mock.calls).toEqual([
+    ['a', defaultSpawnOptions],
+    ['b', defaultSpawnOptions],
+    ['c', defaultSpawnOptions],
+    ['d', defaultSpawnOptions],
+  ])
+
+  spawnSync.mockClear()
+
   series('a', { cmd: 'b' }, { command: 'c' })
   expect(spawnSync.mock.calls).toEqual([
     ['a', defaultSpawnOptions],

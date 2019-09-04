@@ -1,5 +1,6 @@
 const { spawnSync } = require('child_process')
 
+const flattenDeep = require('lodash.flattendeep')
 const isPlainObject = require('lodash.isplainobject')
 const asyncSpawn = require('child-process-promise').spawn
 
@@ -70,15 +71,9 @@ const runAsync = (...args) => {
   })
 }
 
-const series = (...args) => {
-  const commands = Array.isArray(args[0]) ? args[0] : args
-  commands.forEach(command => runSync(command))
-}
+const series = (...args) => flattenDeep(args).forEach(command => runSync(command))
 
-const parallel = (...args) => {
-  const commands = Array.isArray(args[0]) ? args[0] : args
-  return Promise.all(commands.map(command => runAsync(command)))
-}
+const parallel = (...args) => Promise.all(flattenDeep(args).map(command => runAsync(command)))
 
 const scripts = scriptsObj => scriptsObj[process.argv[2]]()
 
