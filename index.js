@@ -84,10 +84,13 @@ const scripts = (scriptsObj = {}) => {
   }
 }
 
+const cmd = (...args) => () => runAsync(...args)
+
 module.exports = {
   runSync,
   runAsync,
   scripts,
   series,
   parallel,
+  cmd,
 }
